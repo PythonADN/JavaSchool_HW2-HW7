@@ -48,7 +48,7 @@ public class Person {
     public boolean marry(Person person) {
         if (this.man != person.man) { // пол не равен
             if (this.spouse == person.spouse && this.spouse != null) return false; // они и так муж и жена
-            if (this.spouse != null) { // пытаемся развести пары (первую)
+            if (this.spouse != null) { // пытаемся развести пары (первую пару)
                 this.divorce();
             }
             if (person.spouse != null) { // вторую пару
@@ -67,8 +67,8 @@ public class Person {
      */
     public boolean divorce() {
         if (this.spouse != null) {
-            spouse.spouse = null;
-            this.spouse = null;
+            this.spouse.spouse = null; // разводим вначале супруга(супругу) текущего человека
+            this.spouse = null; // разводим текущего человека
             return true;
         } else return false;
     }
