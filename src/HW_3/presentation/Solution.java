@@ -5,19 +5,36 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.function.Consumer;
+
+import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.iterator;
 
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         String fileName = "src\\HW_3\\presentation\\file.txt";
+
         System.out.println("\nЗадание 1");
         System.out.println(solution.uniqueWordCount(fileName)); // задание 1
+
         System.out.println("\nЗадание 2");
         solution.listUniqueWords(fileName); // задание 2
+
         System.out.println("\nЗадание 3");
         solution.wordCounterList(fileName); // задание 3
+
         System.out.println("\nЗадание 4");
         solution.reverseLine(fileName); // задание 4
+
+        System.out.println("\nЗадание 5");
+        Iterator<Integer> iterator = new MyCollection<Integer>(new Integer[]{1, 2, 3, 4, 5}).iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
+        }
+
+        System.out.println("\nЗадание 6");
+
+
     }
 
     /**
@@ -101,6 +118,42 @@ public class Solution {
 
     /**
      * Задание 5: Реализуйте свой Iterator для обхода списка в обратном порядке.
+     */
+    public static class MyCollection<T> implements Iterable<T> {
+        private T[] arrayList;
+        private int currentSize;
+
+        public MyCollection(T[] newArray) {
+            this.arrayList = newArray;
+            this.currentSize = arrayList.length;
+        }
+
+        @Override
+        public Iterator<T> iterator() {
+            Iterator<T> it = new Iterator<T>() {
+                private int currentIndex = currentSize - 1;
+
+                @Override
+                public boolean hasNext() {
+                    return currentIndex >= 0 && arrayList[currentIndex] != null;
+                }
+
+                @Override
+                public T next() {
+                    return arrayList[currentIndex--];
+                }
+
+                @Override
+                public void remove() {
+                    throw new UnsupportedOperationException();
+                }
+            };
+            return it;
+        }
+    }
+
+    /**
+     * Задание 6: Выведите на экран строки, номера которых задаются пользователем в произвольном порядке.
      */
 
 
