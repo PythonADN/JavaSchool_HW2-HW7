@@ -1,9 +1,6 @@
 package HW_3.presentation;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.function.Consumer;
 
@@ -32,9 +29,8 @@ public class Solution {
             System.out.print(iterator.next() + " ");
         }
 
-        System.out.println("\nЗадание 6");
-
-
+        System.out.println("\n\nЗадание 6");
+        solution.printLine(fileName);
     }
 
     /**
@@ -155,6 +151,30 @@ public class Solution {
     /**
      * Задание 6: Выведите на экран строки, номера которых задаются пользователем в произвольном порядке.
      */
+    public void printLine(String fileName) {
+        List<String> list = new ArrayList<>();
+        try (BufferedReader fileReader = new BufferedReader(new FileReader(fileName))) {
+            while (fileReader.ready()) {
+                list.add(fileReader.readLine());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Для завершения пропишите \"exit\"");
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            String k = scanner.next();
+            if (k.equals("exit")) break;
+            try {
+                int i = Integer.parseInt(k);
+                if (i < list.size()) System.out.println(list.get(i));
+            } catch (NumberFormatException e) {
+                System.out.println("введите число");
+            }
 
+
+        }
+
+    }
 
 }
