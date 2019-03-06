@@ -2,9 +2,6 @@ package HW_3.presentation;
 
 import java.io.*;
 import java.util.*;
-import java.util.function.Consumer;
-
-import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.iterator;
 
 public class Solution {
     public static void main(String[] args) {
