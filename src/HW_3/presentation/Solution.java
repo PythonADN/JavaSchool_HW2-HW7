@@ -21,7 +21,11 @@ public class Solution {
         solution.reverseLine(fileName); // задание 4
 
         System.out.println("\nЗадание 5");
-        Iterator<Integer> iterator = new MyCollection<Integer>(new Integer[]{1, 2, 3, 4, 5}).iterator();
+        ArrayList<Integer> list = new MyArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        Iterator<Integer> iterator = list.iterator();
         while (iterator.hasNext()) {
             System.out.print(iterator.next() + " ");
         }
@@ -112,38 +116,33 @@ public class Solution {
     /**
      * Задание 5: Реализуйте свой Iterator для обхода списка в обратном порядке.
      */
-    public static class MyCollection<T> implements Iterable<T> {
-        private T[] arrayList;
-        private int currentSize;
+    public static class MyIterator<T> implements Iterator<T> {
+        int cursor;
+        T[] values;
 
-        public MyCollection(T[] newArray) {
-            this.arrayList = newArray;
-            this.currentSize = arrayList.length;
+        public MyIterator(T[] values) {
+            this.values = values;
+            cursor = values.length - 1;
         }
 
         @Override
-        public Iterator<T> iterator() {
-            Iterator<T> it = new Iterator<T>() {
-                private int currentIndex = currentSize - 1;
+        public boolean hasNext() {
+            return cursor >= 0;
+        }
 
-                @Override
-                public boolean hasNext() {
-                    return currentIndex >= 0 && arrayList[currentIndex] != null;
-                }
-
-                @Override
-                public T next() {
-                    return arrayList[currentIndex--];
-                }
-
-                @Override
-                public void remove() {
-                    throw new UnsupportedOperationException();
-                }
-            };
-            return it;
+        @Override
+        public T next() {
+            return values[cursor--];
         }
     }
+
+    public static class MyArrayList<T> extends ArrayList<T> {
+        @Override
+        public Iterator<T> iterator() {
+            return new MyIterator<T>((T[]) this.toArray());
+        }
+    }
+
 
     /**
      * Задание 6: Выведите на экран строки, номера которых задаются пользователем в произвольном порядке.
