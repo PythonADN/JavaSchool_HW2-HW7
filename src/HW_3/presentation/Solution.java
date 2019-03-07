@@ -167,10 +167,7 @@ public class Solution {
             } catch (NumberFormatException e) {
                 System.out.println("введите число");
             }
-
-
         }
-
     }
 
 }
