@@ -30,22 +30,56 @@ public class Solution2057 {
         }
     }
 
-    static class MyCollection extends ArrayList<Integer> {
-        private int minIndex() {
-            int min = 0;
-            for (int i = 0; i < size(); i++) {
-                if (get(i) < get(min))
-                    min = i;
+
+    static class MyCollection<T> extends AbstractList<T> {
+        T[] values;
+
+        public MyCollection() {
+            this.values = (T[]) new Object[0];
+        }
+
+        @Override
+        public boolean add(T t) {
+            try {
+                T[] temp = values;
+                values = (T[]) new Object[temp.length + 1];
+                System.arraycopy(temp, 0, values, 0, temp.length);
+                values[temp.length] = t;
+                return true;
+            } catch (ClassCastException e) {
+                e.printStackTrace();
             }
-            return min;
+            return false;
         }
 
-        public int popMin() {
-            int i = minIndex();
-            if (size() != 0) return remove(i);
-            return 0;
+        public T popMin() {
+            if (size() == 0) return null;
+            try {
+                int minI = 0;
+                for (int i = 0; i < size(); i++) {
+                    if ((Integer) get(i) < (Integer) get(minI))
+                        minI = i;
+                }
+                T[] temp = values;
+                values = (T[]) new Object[temp.length - 1];
+                System.arraycopy(temp, 0, values, 0, minI);
+                System.arraycopy(temp, minI + 1, values, minI, temp.length - minI - 1);
+                return temp[minI];
+            } catch (ClassCastException e) {
+                e.printStackTrace();
+            }
+            return null;
         }
 
+        @Override
+        public T get(int index) {
+            return values[index];
+        }
+
+        @Override
+        public int size() {
+            return values.length;
+        }
     }
 
 }
