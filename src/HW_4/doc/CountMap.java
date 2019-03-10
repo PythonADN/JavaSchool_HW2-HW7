@@ -31,9 +31,9 @@ public interface CountMap<T> {
 
     void addAll(CountMap source); //Добавить все элементы из source в текущий контейнер, при совпадении ключей, суммировать значения
 
-    Map toMap(); //Вернуть java.util.Map. ключ - добавленный элемент, значение - количество его добавлений
+    Map<T, Integer> toMap(); //Вернуть java.util.Map. ключ - добавленный элемент, значение - количество его добавлений
 
-    void toMap(Map destination); //Тот же самый контракт как и toMap(), только всю информацию записать в destination
+    void toMap(Map<T, Integer> destination); //Тот же самый контракт как и toMap(), только всю информацию записать в destination
 }
 
 
