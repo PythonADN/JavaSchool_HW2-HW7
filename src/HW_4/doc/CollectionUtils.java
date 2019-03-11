@@ -36,12 +36,12 @@ public class CollectionUtils {
         removeFrom.removeAll(c2);
     }
 
-    // //true если первый лист содержит все элементы второго
+    // true если первый лист содержит все элементы второго
     public static <T> boolean containsAll(List<? extends T> c1, List<? extends T> c2, T o) { //  неважно для наличия (?)
         return c1.containsAll(c2);
     }
 
-    // //true если первый лист содержит хотя-бы 1 второго
+    // true если первый лист содержит хотя-бы 1 второго
     public static <T> boolean containsAny(List<? extends T> c1, List<? extends T> c2) { // неважно для наличия  (важно только для прохода по циклу)
         for (T c : c2) {
             if (c1.contains(c)) return true;
