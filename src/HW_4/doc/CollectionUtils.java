@@ -12,7 +12,7 @@ public class CollectionUtils {
         destination.addAll(source);
     }
 
-    public static <T> List<? super T> newArrayList() { // неважно для создания
+    public static <T> List<T> newArrayList() { // неважно для создания
         return new ArrayList<>();
     }
 
@@ -36,17 +36,17 @@ public class CollectionUtils {
         source.add(o);
     }
 
-    public static <T> void removeAll(List<? extends T> removeFrom, List<? extends T> c2) { // неважно для удаления(?)
+    public static <T> void removeAll(List<T> removeFrom, List<? extends T> c2) { // неважно для удаления
         removeFrom.removeAll(c2);
     }
 
     // true если первый лист содержит все элементы второго
-    public static <T> boolean containsAll(List<? extends T> c1, List<? extends T> c2, T o) { //  неважно для наличия (?)
+    public static <T> boolean containsAll(List<T> c1, List<T> c2, T o) { //  неважно для наличия
         return c1.containsAll(c2);
     }
 
     // true если первый лист содержит хотя-бы 1 второго
-    public static <T> boolean containsAny(List<? extends T> c1, List<? extends T> c2) { // неважно для наличия  (важно только для прохода по циклу)
+    public static <T> boolean containsAny(List<T> c1, List<? extends T> c2) { // неважно для наличия (важно только для прохода по циклу)
         for (T c : c2) {
             if (c1.contains(c)) return true;
         }
