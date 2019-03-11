@@ -16,6 +16,10 @@ public class CollectionUtils {
         return new ArrayList<>();
     }
 
+    public static <T extends List> T newArrayList2() {
+        return (T) new ArrayList<>();
+    }
+
     public static <T> int indexOf(List<? extends T> source, T o) { // неважно для налиничи
         return source.indexOf(o);
     }
