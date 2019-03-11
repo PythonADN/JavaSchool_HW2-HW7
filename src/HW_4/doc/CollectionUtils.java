@@ -20,7 +20,7 @@ public class CollectionUtils {
         return (T) new ArrayList<>();
     }
 
-    public static <T> int indexOf(List<? extends T> source, T o) { // неважно для налиничи
+    public static <T> int indexOf(List<T> source, T o) { // неважно для наличия
         return source.indexOf(o);
     }
 
@@ -36,12 +36,12 @@ public class CollectionUtils {
         source.add(o);
     }
 
-    public static <T> void removeAll(List<T> removeFrom, List<? extends T> c2) { // неважно для удаления
+    public static <T> void removeAll(List<T> removeFrom, List<T> c2) { // неважно для удаления
         removeFrom.removeAll(c2);
     }
 
     // true если первый лист содержит все элементы второго
-    public static <T> boolean containsAll(List<T> c1, List<T> c2, T o) { //  неважно для наличия
+    public static <T> boolean containsAll(List<T> c1, List<T> c2) { //  неважно для наличия
         return c1.containsAll(c2);
     }
 
