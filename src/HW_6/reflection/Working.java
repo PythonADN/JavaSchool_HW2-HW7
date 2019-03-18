@@ -14,12 +14,12 @@ public class Working extends Person {
         return position;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
     public int getSalary() {
         return salary;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public void setSalary(int salary) {
