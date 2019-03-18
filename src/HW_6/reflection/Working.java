@@ -3,6 +3,7 @@ package HW_6.reflection;
 public class Working extends Person {
     private String position;
     private int salary;
+    public static final String WORK = "WORK";
 
     public Working(int height, int weight, int age, String position, int salary) {
         super(height, weight, age);

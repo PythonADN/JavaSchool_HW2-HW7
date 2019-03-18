@@ -4,6 +4,7 @@ public class Person {
     private int height;
     private int weight;
     private int age;
+    public static final String race = "human";
 
     public Person(int height, int weight, int age) {
         this.height = height;
