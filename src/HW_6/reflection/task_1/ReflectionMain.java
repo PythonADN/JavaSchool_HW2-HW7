@@ -1,4 +1,4 @@
-package HW_6.reflection;
+package HW_6.reflection.task_1;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -8,8 +8,8 @@ public class ReflectionMain {
     public static void main(String[] args) {
         Working working = new Working(180, 75, 30, "Аналитик", 120);
 //        getAllMethods(working);
-//        getAllGetters(working);
-        constantCheck(working);
+        getAllGetters(working);
+//        constantCheck(working);
     }
 
 
@@ -35,7 +35,7 @@ public class ReflectionMain {
     public static void getAllGetters(Object o) {
         Class<?> clazz = o.getClass();
         for (Method method : clazz.getDeclaredMethods()) {
-            if (method.getName().matches("get.+")) {
+            if (method.getName().matches("get[A-Z]+.*")) {
                 System.out.println(method.getName());
             }
         }

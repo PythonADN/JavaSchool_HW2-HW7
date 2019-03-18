@@ -1,4 +1,4 @@
-package HW_6.reflection;
+package HW_6.reflection.task_1;
 
 public class Working extends Person {
     private String position;
