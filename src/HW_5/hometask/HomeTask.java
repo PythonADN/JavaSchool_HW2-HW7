@@ -1,4 +1,4 @@
-package HW_5.examples.hometask;
+package HW_5.hometask;
 
 import java.io.IOException;
 import java.io.InputStream;

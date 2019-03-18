@@ -1,4 +1,4 @@
-package HW_5.examples.advanced;
+package HW_5.advanced;
 
 public class TryFinallyTest {
 

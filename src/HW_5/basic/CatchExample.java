@@ -1,4 +1,4 @@
-package HW_5.examples.basic;
+package HW_5.basic;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

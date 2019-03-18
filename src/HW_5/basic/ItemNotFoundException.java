@@ -1,4 +1,4 @@
-package HW_5.examples.basic;
+package HW_5.basic;
 
 /**
  * Thrown when system can not find requested item.
