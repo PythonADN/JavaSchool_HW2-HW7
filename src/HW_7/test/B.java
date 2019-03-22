@@ -1,4 +1,4 @@
-package HW_7;
+package HW_7.test;
 
 import HW_7.test.Interface_B;
 
