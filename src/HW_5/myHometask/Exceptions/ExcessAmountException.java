@@ -1,4 +1,4 @@
-package HW_5.examples.myHometask.Exceptions;
+package HW_5.myHometask.Exceptions;
 
 public class ExcessAmountException extends Exception {
 }

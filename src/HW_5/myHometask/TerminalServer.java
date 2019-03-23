@@ -1,7 +1,7 @@
-package HW_5.examples.myHometask;
+package HW_5.myHometask;
 
-import HW_5.examples.myHometask.Exceptions.ManyInputsExeption;
-import HW_5.examples.myHometask.Exceptions.MultiplicityOf100Exception;
+
+import HW_5.myHometask.Exceptions.ManyInputsExeption;
 
 public class TerminalServer {
     // сервер проверяет введённый пользователем аккаунт и пароль

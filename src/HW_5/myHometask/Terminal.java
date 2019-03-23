@@ -1,6 +1,6 @@
-package HW_5.examples.myHometask;
+package HW_5.myHometask;
 
-import HW_5.examples.myHometask.Exceptions.*;
+import HW_5.myHometask.Exceptions.*;
 
 public interface Terminal {
     void checkAccount() throws PinInputException, ManyInputsExeption; // проверить состояние счёта

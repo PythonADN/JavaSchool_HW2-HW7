@@ -1,4 +1,4 @@
-package HW_5.examples.myHometask;
+package HW_5.myHometask;
 
 public class Print {
     static void printStart() {

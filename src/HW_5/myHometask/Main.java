@@ -1,8 +1,7 @@
-package HW_5.examples.myHometask;
+package HW_5.myHometask;
 
-import HW_5.examples.myHometask.Exceptions.*;
-
-import static HW_5.examples.myHometask.Print.*;
+import HW_5.myHometask.Exceptions.*;
+import static HW_5.myHometask.Print.*;
 import java.util.Scanner;
 
 

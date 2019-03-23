@@ -1,8 +1,6 @@
-package OCA.visitor;
+package OCA_1.visitor;
 
-import OCA.aquarium.*;
-import OCA.aquarium.jellies.Water;
-import OCA.*;
+import OCA_1.aquarium.jellies.Water;
 
 public class WaterFiller {
     Water water;

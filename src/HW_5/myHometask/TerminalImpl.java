@@ -1,6 +1,6 @@
-package HW_5.examples.myHometask;
+package HW_5.myHometask;
 
-import HW_5.examples.myHometask.Exceptions.*;
+import HW_5.myHometask.Exceptions.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

@@ -1,6 +1,6 @@
-package HW_5.examples.myHometask;
+package HW_5.myHometask;
 
-import HW_5.examples.myHometask.Exceptions.ManyInputsExeption;
+import HW_5.myHometask.Exceptions.ManyInputsExeption;
 
 /**
  * проверка пин-кода
